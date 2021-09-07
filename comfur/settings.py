@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home'
+    'home',
+    'contact'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,10 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = get_secret('EMAIL_USER')
+EMAIL_HOST_PASSWORD = get_secret('EMAIL_PASS')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

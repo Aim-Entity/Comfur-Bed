@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>Contact</title>
+  <link rel="stylesheet" href="{% static 'contact/contact.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <div class="container">
+      <div class="s1">
+        <div class="s1-container">
+          <div class="s1-right">
+            <form method="POST"> {% csrf_token %}
+              {{ form }}
+
+              <button type="submit" class="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="s1-left">
+            <div class="s1-left-top">
+              <h2 class="s1-title">Get In Touch
+                With Us Today!</h2>
+
+              <p class="s1-text">
+                Fill In our form or give us a call to purchase a product or ask a question.
+                If we do not respond back by
+                the estimated response time, then please
+                re-send the form or call us again.
+              </p>
+
+              <p class="s1-text2">
+                Est Response Time: Within 24 Hours
+              </p>
+            </div>
+
+            <!-- <div class="s1-left-bottom">
+              <div class="contact-detail">
+                <img src="{% static 'contact/imgs/envelope.svg' %}" alt="Envelope" class="contact-img">
+
+                <p class="contact-text">Bookings@chauffline.com</p>
+              </div>
+
+              <div class="contact-detail">
+                <img src="{% static 'contact/imgs/phone.svg' %}" alt="Phone" class="contact-img">
+
+                <p class="contact-text">07593331949</p>
+              </div>
+
+              <div class="contact-detail">
+                <img src="{% static 'contact/imgs/phone.svg' %}" alt="Phone" class="contact-img">
+
+                <p class="contact-text">07749385985</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>
