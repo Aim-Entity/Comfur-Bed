@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  <link rel="stylesheet" href="{% static 'home/style.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  {% block head %}
+  <title>ADD A BLOCK</title>
+  {% endblock %}
+</head>
+<body>
+  <div class="base-container">
+    <nav>
+      <div class="navigation">
+        <div class="left-nav">
+          <h2 class="nav-title">Comfur Beds</h2>
+
+          <a href="#"><p class="nav-link home-link">Home</p></a>
+          <a href="#"><p class="nav-link">Products</p></a>
+          <a href="#"><p class="nav-link">Contact Us</p></a>
+        </div>
+
+        <!-- <div class="right-nav">
+          <a href="#"><p class="nav-link">Login</p></a>
+          <a href="#"><p class="nav-link">Sign Up</p></a>
+        </div> -->
+      </div>
+
+      <div class="nav-dropdown">
+        <div>
+          <a href="#"><p class="nav-link home-link">Home</p></a>
+          <a href="#"><p class="nav-link">Products</p></a>
+          <a href="#"><p class="nav-link">Contact Us</p></a>
+        </div>
+      </div>
+
+      <div class="phone-navigation">
+        <h2 class="nav-title">Comfur Beds</h2>
+
+        <img src="{% static 'home/imgs/hamburger.svg' %}" alt="Hamburger" class="hamburger">
+      </div>
+    </nav>
+  </div>
+
+  {% block content %}
+    ADD A CONTENT BLOCK
+  {% endblock %}
+
+  <div class="base-container">
+    <div class="footer">
+      <footer>
+        <div class="left-footer">
+          <h3 class="copy">© Comfur Beds, all rights reserved</h3>
+  
+          <div class="credits">
+            <h3 class="designer">Designed & Developed By Bilal Uddin. Visit www.bilaluddin.me</h3>
+            <p class="credit-imgs">Credits: Fontawesome, RoundIcons, Unsplash, Freepik</p>
+          </div>
+        </div>
+  
+        <div class="right-footer">
+          <h3 class="email">Email:</h3>
+          <h3 class="phone-footer">Phone:</h3>
+  
+          <div class="socials">
+            <a href="" target="_blank"><img src="{% static 'home/imgs/fb.svg' %}" alt="FB" class="facebook"></a>
+            <a href="" target="_blank"><img src="{% static 'home/imgs/twitter.svg' %}" alt="twitter" class="twitter"></a>
+            <a href="" target="_blank"><img src="{% static 'home/imgs/insta.svg' %}" alt="instagram" class="instagram"></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="{% static 'base.js' %}"></script>
+</body>
+</html>

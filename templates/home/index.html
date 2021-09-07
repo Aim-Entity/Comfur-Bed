@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'home/style.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <div class="container">
+      <div class="s1">
+
+        <img src="{% static 'home/imgs/hero.png' %}" alt="Hero" class="hero-img">
+  
+        <div class="s1-content">
+          <h1 class="s1-title">Personalizable Furniture Sent Right To Your Door Step</h1>
+          <p class="s1-text">Whether its beds, coffee rables, sofas or storage units, we are the people for you. Click the button below to check out our stock</p>
+    
+          <button class="s1-btn btn">Our Products</button>
+        </div>
+      </div>
+  
+      <div class="s2">
+        <div class="s2-cont">
+          <h3 class="s2-title">
+            Who We Are
+          </h3>
+  
+          <p class="s2-text">
+            We manufacture and send custom made furniture to you. Every products listed on Comfur Beds are crafted with expertise and the highest quality materials.
+          </p>
+        </div>
+      </div>
+  
+      <div class="s3">
+        <h2 class="s3-title">
+          Why Comfur Beds?
+        </h2>
+  
+        <hr class="s3-line">
+  
+        <div class="s3-perks">
+          <!-- PERK 1 -->
+          <div class="perk">
+            <div class="perk-img-circ">
+              <img src="{% static 'home/imgs/carpenter.svg' %}" alt="Carpenter" class="perk-img">
+            </div>
+  
+            <h4 class="perk-title">Hand-made</h4>
+  
+            <p class="perk-text">All of our furnitures are hand-made by experts. The benefit of this is that we can make you a product personalised exactly to your liking.</p>
+          </div>
+  
+          <!-- PERK 2 -->
+          <div class="perk">
+            <img src="{% static 'home/imgs/UK.svg' %}" alt="UK" class="perk-img-uk">
+  
+            <h4 class="perk-title">100% British Made</h4>
+  
+            <p class="perk-text">Our service is to all over the UK and Northern Ireland. </p>
+          </div>
+  
+          <!-- PERK 3 -->
+          <div class="perk">
+            <div class="perk-img-circ">
+              <img src="{% static 'home/imgs/delivery.svg' %}" alt="Delivery" class="perk-img">
+            </div>
+  
+            <h4 class="perk-title">3-days Delivery</h4>
+  
+            <p class="perk-text">We promise to deliver your item around 3 business days from the moment you make an order.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="s4">
+        <div class="s4-cont">
+          <img src="{% static 'home/imgs/bed.png' %}" alt="Bed" class="s4-img">
+  
+          <div class="s4-detail">
+            <h2 class="s4-title">Products made with quality</h2>
+  
+            <p class="s4-text">We ensure you our products are built to last long and made with high-grade materials. Our products range from beds, coffee tables, storage unit, sofas and more</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="s5">
+        <div class="s5-title">Popular Products</div>
+  
+        <div class="cards">
+          <!-- CARD 1 -->
+          <div class="card">
+            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
+  
+            <h4 class="c-name">Bed</h4>
+            <hr class="c-line">
+  
+            <div class="bottom-card">
+              <div class="btn-group">
+                <button class="c-btn c-left-btn btn">Add To Cart</button>
+                <button class="c-btn c-right-btn btn">View</button>
+              </div>
+              <h3 class="c-price">£199.99</h3>
+            </div>
+          </div>
+  
+          <!-- CARD 2 -->
+          <div class="card">
+            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
+  
+            <h4 class="c-name">Bed</h4>
+            <hr class="c-line">
+  
+            <div class="bottom-card">
+              <div class="btn-group">
+                <button class="c-btn c-left-btn btn">Add To Cart</button>
+                <button class="c-btn c-right-btn btn">View</button>
+              </div>
+              <h3 class="c-price">£199.99</h3>
+            </div>
+          </div>
+  
+          <!-- CARD 3 -->
+          <div class="card">
+            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
+  
+            <h4 class="c-name">Bed</h4>
+            <hr class="c-line">
+  
+            <div class="bottom-card">
+              <div class="btn-group">
+                <button class="c-btn c-left-btn btn">Add To Cart</button>
+                <button class="c-btn c-right-btn btn">View</button>
+              </div>
+              <h3 class="c-price">£199.99</h3>
+            </div>
+          </div>
+        </div>
+        
+        <button class="s5-btn btn">Our Products</button>
+      </div>
+  
+      <div class="s6">
+        <div class="s6-cont">
+          <h3 class="s6-title">
+            Customer 
+            Satisfaction
+          </h3>
+  
+          <p class="s6-text">
+            Our customers claim they had the perfect experience and were content with the product we had created for them. We promise the same for you and if anything is not to your liking, we will refund you 100% of the money.
+          </p>
+        </div>
+      </div>
+  
+      <div class="s7">
+        <div class="testimonials">
+          <!-- CARD 1 -->
+          <div class="t-card">
+            <h4 class="t-name">Jake Miller</h4>
+  
+            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+          </div>
+  
+          <div class="t-card">
+            <h4 class="t-name">Jake Miller</h4>
+  
+            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+          </div>
+  
+          <div class="t-card">
+            <h4 class="t-name">Jake Miller</h4>
+  
+            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="s8">
+        <div class="s8-cont">
+          <div class="s8-detail">
+            <h2 class="s8-title">Buying Process</h2>
+            <p class="s8-text">If you’re ready to make a purchase, please navigate to the cart section after logging in with an account. If you want to have your item personalised, instead of using the cart system please send us a message using the button below.</p>
+  
+            <button class="s8-btn btn">Contact Us</button>
+          </div>
+  
+          <img src="{% static 'home/imgs/bed2.png' %}" alt="Bed" class="s8-img">
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>
