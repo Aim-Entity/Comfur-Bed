@@ -7,6 +7,7 @@
   font-size: 36px;
 
   color: #000000;
+  padding-top: 0;
 }
 
 .s1-text {
@@ -89,7 +90,7 @@ form input {
   padding-left: 20px;
   font-size: 18px;
 
-  font-family: "Montserrat";
+  font-family: "poppins";
 }
 
 .message {
@@ -102,7 +103,7 @@ form input {
   padding-top: 20px;
   font-size: 18px;
 
-  font-family: "Montserrat";
+  font-family: "poppins";
 }
 
 .submit {
@@ -130,8 +131,8 @@ form input {
 
 .s1-right {
   grid-column: 2 / span 1;
-  justify-self: right;
-  margin-right: 40px;
+  justify-self: left;
+  margin-right: 200px;
 }
 
 .s1-left {
@@ -139,6 +140,7 @@ form input {
   grid-row: 1 / span 1;
 
   margin-left: 40px;
+  width: 700px;
 }
 
 .s1-left-bottom {
@@ -149,7 +151,29 @@ footer {
   margin-top: 210px;
 }
 
+.navigation {
+  background: #8a3e2a;
+}
+
+.phone-navigation {
+  background: #8a3e2a;
+}
+
+.submit {
+  background-color: #e5ae58;
+}
+
 @media screen and (max-width: 960px) {
+  footer {
+    position: relative;
+    top: 500px;
+  }
+
+  .s1-title {
+    margin: 0 auto;
+    width: 50%;
+  }
+
   .s1-container {
     display: flex;
     flex-direction: column;

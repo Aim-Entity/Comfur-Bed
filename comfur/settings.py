@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'contact'
+    'contact',
+    'product',
+    "django_filters",
 ]
 
 MIDDLEWARE = [

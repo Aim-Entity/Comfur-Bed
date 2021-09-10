@@ -24,7 +24,7 @@ a {
   justify-content: space-between;
   align-items: center;
 
-  /* background: #724935; */
+  /* background: #8A3E2A; */
 }
 
 .left-nav {
@@ -63,12 +63,12 @@ footer {
   width: 100%;
   height: 210px;
 
-  background: #724935;
+  background: #8a3e2a;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 2000px;
 }
 
 .left-footer {
@@ -207,7 +207,7 @@ footer p {
     width: 100%;
     height: 600px;
 
-    background: #724935;
+    background: #8a3e2a;
 
     display: flex;
     flex-direction: column;
