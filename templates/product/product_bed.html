@@ -85,6 +85,22 @@
   </style>
 
   <script>
+    function buttonHover(btn, bg, text, ogText) {
+      let objects = document.querySelectorAll(btn)
+    
+      for(let object = 0; object < objects.length; object++){
+        objects[object].addEventListener("mouseover", (e) => {
+          gsap.to(e.target, {background: bg, color: text, duration: 0.5, ease: "Power2.easeOut"})
+        })
+    
+        objects[object].addEventListener("mouseout", (e) => {
+          gsap.to(e.target, {background: "#ffffff", color: ogText, duration: 0.5, ease: "Power2.easeOut"})
+        })
+      }
+    }
+
+    buttonHover(".c-btn", "#6c757d", "#FFFFFF", "#6c757d")
+
     document.querySelector("#id_name__icontains").placeholder = "Search.."
 
     let navigation = document.querySelector(".navigation")

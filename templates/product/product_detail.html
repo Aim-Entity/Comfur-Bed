@@ -73,8 +73,23 @@
     </div>
 
     <script>
-      let navigation = document.querySelector(".navigation")
-      navigation.style.opacity = 1
+      function imgHover(element) {
+        if(window.innerWidth > 1000){
+          let objects = document.querySelectorAll(element)
+      
+          for(let object = 0; object < objects.length; object++){
+            objects[object].addEventListener("mouseover", (e) => {
+              gsap.to(e.target, {width: "550px", height: "385px", duration: 0.5, ease: "Power2.easeOut"})
+            })
+        
+            objects[object].addEventListener("mouseout", (e) => {
+              gsap.to(e.target, {width: "500px", height: "335px", duration: 0.5, ease: "Power2.easeOut"})
+            })
+          }
+        }
+      }
+
+      imgHover(".s3-img")
     </script>
   {% endblock %}
 </body>

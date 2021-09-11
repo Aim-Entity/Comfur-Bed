@@ -22,7 +22,7 @@
           <h1 class="s1-title">Personalizable Furniture Sent Right To Your Door Step</h1>
           <p class="s1-text">Whether its beds, coffee rables, sofas or storage units, we are the people for you. Click the button below to check out our stock</p>
     
-          <button class="s1-btn btn">Our Products</button>
+          <a href="{% url 'product' %}"><button class="s1-btn btn">Our Products</button></a>
         </div>
       </div>
   
@@ -96,55 +96,25 @@
   
         <div class="cards">
           <!-- CARD 1 -->
+          {% for popular_product in popular %}
           <div class="card">
-            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
+            <img src="{{ popular_product.product.thumbnail.url }}" alt="Product" class="c-img">
   
-            <h4 class="c-name">Bed</h4>
+            <h4 class="c-name">{{ popular_product.product.name }}</h4>
             <hr class="c-line">
   
             <div class="bottom-card">
               <div class="btn-group">
-                <button class="c-btn c-left-btn btn">View</button>
+                <a href="{% url 'product-detail' popular_product.product.slug %}"><button class="c-btn c-left-btn btn">View</button></a>
                 <!-- <button class="c-btn c-right-btn btn">View</button> -->
               </div>
-              <h3 class="c-price">£199.99</h3>
+              <h3 class="c-price">{{ popular_product.product.price }}</h3>
             </div>
           </div>
-  
-          <!-- CARD 2 -->
-          <div class="card">
-            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
-  
-            <h4 class="c-name">Bed</h4>
-            <hr class="c-line">
-  
-            <div class="bottom-card">
-              <div class="btn-group">
-                <button class="c-btn c-left-btn btn">View</button>
-                <!-- <button class="c-btn c-right-btn btn">View</button> -->
-              </div>
-              <h3 class="c-price">£199.99</h3>
-            </div>
-          </div>
-  
-          <!-- CARD 3 -->
-          <div class="card">
-            <img src="{% static 'home/imgs/bed.png' %}" alt="Product" class="c-img">
-  
-            <h4 class="c-name">Bed</h4>
-            <hr class="c-line">
-  
-            <div class="bottom-card">
-              <div class="btn-group">
-                <button class="c-btn c-left-btn btn">View</button>
-                <!-- <button class="c-btn c-right-btn btn">View</button> -->
-              </div>
-              <h3 class="c-price">£199.99</h3>
-            </div>
-          </div>
+          {% endfor %}
         </div>
         
-        <button class="s5-btn btn">Our Products</button>
+        <a href="{% url 'product' %}"><button class="s5-btn btn">Our Products</button></a>
       </div>
   
       <div class="s6">
@@ -163,23 +133,13 @@
       <div class="s7">
         <div class="testimonials">
           <!-- CARD 1 -->
+          {% for test in testimonial %}
           <div class="t-card">
-            <h4 class="t-name">Jake Miller</h4>
+            <h4 class="t-name">{{ test.name }}</h4>
   
-            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            <p class="t-text">"{{ test.message }}"</p>
           </div>
-  
-          <div class="t-card">
-            <h4 class="t-name">Jake Miller</h4>
-  
-            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-          </div>
-  
-          <div class="t-card">
-            <h4 class="t-name">Jake Miller</h4>
-  
-            <p class="t-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
   
@@ -187,15 +147,18 @@
         <div class="s8-cont">
           <div class="s8-detail">
             <h2 class="s8-title">Buying Process</h2>
-            <p class="s8-text">If you’re ready to make a purchase, please navigate to the cart section after logging in with an account. If you want to have your item personalised, instead of using the cart system please send us a message using the button below.</p>
+            <p class="s8-text">If you’re ready to make a purchase, please please give us a call or click the button below to send a message. Please use our contact form to ask any questions and we’ll be happy to help.</p>
   
-            <button class="s8-btn btn">Contact Us</button>
+            <a href="{% url 'contact' %}"><button class="s8-btn btn">Contact Us</button></a>
           </div>
   
           <img src="{% static 'home/imgs/bed2.png' %}" alt="Bed" class="s8-img">
         </div>
       </div>
     </div>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="{% static 'home/app.js' %}"></script>
   {% endblock %}
 </body>
 </html>
