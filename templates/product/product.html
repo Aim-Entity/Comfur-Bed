@@ -30,11 +30,11 @@
       <div class="categories">
         <a href="{% url 'product' %}"><div class="all active-btn category-btn"><p class="category-test">All</p></div></a>
 
-        <a href=""><div class="first_class category-btn"><p class="category-test">Beds</p></div></a>
+        <a href="{% url 'bed' %}"><div class="first_class category-btn"><p class="category-test">Beds</p></div></a>
 
-        <a href=""><div class="executive category-btn"><p class="category-test">Tables</p></div></a>
+        <a href="{% url 'table' %}"><div class="executive category-btn"><p class="category-test">Tables</p></div></a>
 
-        <a href=""><div class="business category-btn"><p class="category-test">Sofas</p></div></a>
+        <a href="{% url 'sofa' %}"><div class="business category-btn"><p class="category-test">Sofas</p></div></a>
       </div>
     </div>
 
@@ -66,7 +66,7 @@
 
           <div class="bottom-card">
             <div class="btn-group">
-              <button class="c-btn c-left-btn btn">View</button>
+              <a href="{% url 'product-detail' product.slug %}"><button class="c-btn c-left-btn btn">View</button></a>
               <!-- <button class="c-btn c-right-btn btn">View</button> -->
             </div>
             <h3 class="c-price">£{{ product.price }}</h3>

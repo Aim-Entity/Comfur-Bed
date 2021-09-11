@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>Our Products</title>
+  <link rel="stylesheet" href="{% static 'product/product.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+  <div class="container">
+    <div class="s1">
+      <h2 class="s1-title">Here Are Some Of Our Furnitures</h2>
+      <p class="s1-sub-title">* Send Us A Call To Customise A Product</p>
+
+      <form method="GET"> {% csrf_token %}
+        <div class="search-bar">
+          <!-- <input type="text" class="search" placeholder="Search A Car..."> -->
+          {{ filter.form }}
+
+          <button type="submit" class="search-btn"><img src="{% static 'product/imgs/search.svg' %}" alt="Mag" class="mag"></button>
+        </div>
+      </form>
+
+      <div class="categories">
+        <a href="{% url 'product' %}"><div class="all category-btn"><p class="category-test">All</p></div></a>
+
+        <a href="{% url 'bed' %}"><div class="first_class category-btn"><p class="category-test">Beds</p></div></a>
+
+        <a href="{% url 'table' %}"><div class="executive active-btn category-btn"><p class="category-test">Tables</p></div></a>
+
+        <a href="{% url 'sofa' %}"><div class="business category-btn"><p class="category-test">Sofas</p></div></a>
+      </div>
+    </div>
+
+    <div class="s2">
+      <div class="card-group">
+        {% for product in filter.qs %}
+        <!-- <div class="card">
+          <img src="{{ car.thumbnail.url }}" alt="Thumbnail" class="card-thumbnail">
+  
+          <hr class="card-line">
+  
+          <h2 class="card-category">{{ car.category }}</h2>
+  
+          <p class="card-perk1">{{ car.quality_one }}</p>
+          <p class="card-perk2">{{ car.quality_two }}</p>
+  
+          <p class="card-car-name">{{ car.name }}</p>
+  
+          <hr class="card-line">
+  
+          <a href=""><button class="card-btn btn">Find Out More</button></a>
+        </div> -->
+
+        <div class="card">
+          <img src="{{ product.thumbnail.url }}" alt="Product" class="c-img">
+
+          <h4 class="c-name">{{ product.name }}</h4>
+          <hr class="c-line">
+
+          <div class="bottom-card">
+            <div class="btn-group">
+              <a href="{% url 'product-detail' product.slug %}"><button class="c-btn c-left-btn btn">View</button></a>
+              <!-- <button class="c-btn c-right-btn btn">View</button> -->
+            </div>
+            <h3 class="c-price">£{{ product.price }}</h3>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+    </div>
+  </div>
+
+  <style>
+    .navigation{
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    document.querySelector("#id_name__icontains").placeholder = "Search.."
+
+    let navigation = document.querySelector(".navigation")
+    navigation.style.opacity = 1
+  </script>
+  {% endblock %}
+</body>
+</html>

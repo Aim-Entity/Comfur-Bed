@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>{{ object.name }}</title>
+  <link rel="stylesheet" href="{% static 'product/product_detail.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <div class="container">
+      <div class="s1">
+        <img src="{{ object.cover.url }}" alt="Product" class="product-img">
+
+        <div class="product-info">
+          <h3 class="product-name">{{ object.name }}</h3>
+
+          <div class="rate-cont rate-cont1">
+            <!-- <div class="top-rate">
+              <img src="{% static 'fleet/imgs/clock.svg' %}" alt="Time" class="rate-img">
+              <p class="rate-title">Per Hour Rate</p>
+            </div>
+
+            <p class="rate"><b class="rate-price">£{{ object.hourly_rate }}</b><b class="rate-time"> / Hour.</b> Min of 2 hours hire
+            </p> -->
+
+            <ul class="dimensions">
+              
+              <li class="d-value width">Width: {{ object.width }}cm</li>
+              <li class="d-value height">Height: {{ object.height }}cm</li>
+              {% if object.length %}
+                <li class="d-value length">Length: {{ object.length }}cm</li>
+              {% else %}
+                <li class="d-value length">Length: N/A</li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="s2">
+        <h2 class="desc-title">Product Description</h2>
+
+        <p class="desc-text">{{ object.decription }}</p>
+      </div>
+
+      <div class="s3">
+        <h2 class="img-title">More Images</h2>
+
+        <div class="s3-img-cont">
+          {% if object.sub_cover1 %}
+            <img src="{{ object.sub_cover1.url }}" alt="Sub cover" class="s3-img">
+          {% endif %}
+
+          {% if object.sub_cover2 %}
+            <img src="{{ object.sub_cover2.url }}" alt="Sub cover" class="s3-img">
+          {% endif %}
+
+          {% if object.sub_cover3 %}
+            <img src="{{ object.sub_cover3.url }}" alt="Sub cover" class="s3-img">
+          {% endif %}
+
+          {% if object.sub_cover4 %}
+            <img src="{{ object.sub_cover4.url }}" alt="Sub cover" class="s3-img">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let navigation = document.querySelector(".navigation")
+      navigation.style.opacity = 1
+    </script>
+  {% endblock %}
+</body>
+</html>
